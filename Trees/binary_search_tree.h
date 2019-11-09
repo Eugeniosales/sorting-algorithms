@@ -12,6 +12,8 @@ private:
     struct Node {
         T info;
         Node *left, *right;
+
+        Node(T i, Node *l, Node *r) : info(i), left(l), right(r) {}
     };
     
     Node *root;
@@ -34,9 +36,9 @@ private:
     //Pass through the nodes
     void preorder(Node *node) const {
         if(node){
-            cout << node->info << endl;
             preorder(node->left);
             preorder(node->right);
+            cout << node->info << endl;
         }
     }
 
